@@ -1,7 +1,7 @@
 const GETRouter     = require('express').Router();
-const childProcess  = require('child_process');
-const path          = require('path');
-const fse           = require('fs-extra');
+const ChildProcess  = require('child_process');
+const Path          = require('path');
+const Fse           = require('fs-extra');
 
 //--set GET route
 GETRouter.get('/getModel', getRouterCallback);
@@ -34,7 +34,7 @@ function getRouterCallback(request, response)
         console.log('File was send properly\n');
 
         //and remove all received images
-        fse.emptyDir( path.resolve(__dirname,"../files/images") );
+        fse.emptyDir(imagesDirPath);
     });
 }
 
