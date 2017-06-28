@@ -1,6 +1,6 @@
 # bvs_server
 
-** BVS Server ** is one of main element of Bruce Vision System.
+**BVS Server** is one of main element of Bruce Vision System.
 
 
 That's application server Written in javascript using node.js and 
