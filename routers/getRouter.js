@@ -1,7 +1,7 @@
 const GETRouter     = require('express').Router();
-const ChildProcess  = require('child_process');
-const Path          = require('path');
-const Fse           = require('fs-extra');
+const childProcess  = require('child_process');
+const path          = require('path');
+const fse           = require('fs-extra');
 
 //--set GET route
 GETRouter.get('/getModel', getRouterCallback);
@@ -14,7 +14,7 @@ function getRouterCallback(request, response)
 {
     const imagesDirPath = getAbsPath("../files/images");
     const modelFilePath = getAbsPath("../files/reconstruction/model.off");
-    const bvsReconPath  = getAbsPath("../../bvs_recon/build/Release/zf_trw_demo");
+    const bvsReconPath  = getAbsPath("../../bvs_recon/build/Release/bvs_recon");
 
     const bvsReconApp   = childProcess.execFile(bvsReconPath
                             , [imagesDirPath, modelFilePath]
@@ -40,7 +40,7 @@ function getRouterCallback(request, response)
 
 function getAbsPath     (localPath)
 {
-  return path.resolve(__dirname, localPath);
+    return path.resolve(__dirname, localPath);
 }
 
 function errorHandling  (error, message)
